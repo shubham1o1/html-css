@@ -317,3 +317,5 @@ Output:
 ```
 - fixed background: picture remains in one position within the element without being effected by scrolling
 
+## Box Model, Margin and Padding:
+

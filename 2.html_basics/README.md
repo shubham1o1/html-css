@@ -90,9 +90,9 @@
 - TIP: Usually use one h1 per page, since search engine look for them. Other heading you may have as many as you want.
 - lorem10, lorem500, lorem tags with emmet is possible to generate dummy texts
 - ALT + z to wrap text in VS Code
-- <b></b>, ,<i></i>, <u></u> tags have been deprecated because html is not meant for styling
+- ```<b></b>, ,<i></i>, <u></u>``` tags have been deprecated because html is not meant for styling
 - Strong and Emphasis are semantic tags and we can specify from CSS what they mean, and how they can stand out.
-- <del> architecto</del> del tag for strikethrough but it can be customized from CSS, it is not like <s></s> tag which absolutely meant strikethrough
+- <del> architecto</del> ```<del>``` tag for strikethrough but it can be customized from CSS, it is not like ```<s></s>``` tag which absolutely meant strikethrough
 
 ## Links, Images and Attributes:
 
@@ -113,7 +113,7 @@
 <!-- Local Image -->
 <img src="images/sample.jpg" alt="My Image" width="200">
 
-<!-- Remote Imaege -->
+<!-- Remote Image -->
 <img src="https://source.unsplash.com/collection/190727/200x200" alt="">
 ```
 
@@ -131,7 +131,7 @@
 
 - Emmet TIP -> li*4 enter creates 4 <li> rows
 
-#### Odered List
+#### Ordered List
 ```html
  <!-- Ordered List -->
  <ol type="I">
@@ -145,7 +145,7 @@
  #### Nested List: 
  - Identation is added and bullet type is changed
  ```html
-   <!-- Underordered List -->
+   <!-- Unordered List -->
   <ul style="list-style: square;">
     <li>Item 1</li>
     <li>Item 2
@@ -161,8 +161,8 @@
 #### Tables: 
 - Used for tabular data
 - Back in the days tables were used for website layout. They kept sidebars and menu in table. But now we have grid and flex. 
-- Has head <thead>, row<tr>, heading<th>, body<tbody> contains data, data<td> contains element in the row<tr>
-- Use the <table> tag
+- Has head ```<thead>```, row```<tr>```, heading```<th>```, body```<tbody>``` - contains data, data```<td>``` contains element in the row```<tr>```
+- Use the ```<table>``` tag
 - Table can also have footer
 
 ```html
@@ -197,7 +197,7 @@
 ## Forms and Input Field:
 
 ### Forms:
-- Forms are processed in the backend, there might be some services whose snippets we can use. 
+- Forms are processed in the backend; however, there might be some services whose snippets we can use. 
 - form's action is where the form is submitted to
 - divs are division used to separate markups in certain ways
 ```html
@@ -211,9 +211,10 @@
 - for attribute of label should match id of input type so that when we click on the label the input field gets highlighted.
 - the input field has name attribute which is useful on the server side where we want to access the value of that field in when the form is submitted.
 
-#### Forms Input Optons:
+### Forms Input Optons:
 - Notice the different in input type's value
-**text input**
+
+#### text input
 - Pre-set value to "John Doe" using value attribute
 ```html
   <div>
@@ -221,12 +222,8 @@
     <input type="text" id ="name" name="name" value="John Doe">
   </div>
 ```
-- Output:
-  <div>
-    <label for="name">Name</label> <br>
-    <input type="text" id ="name" name="name" value="John Doe">
-  </div>
-**Email Input**
+
+#### Email Input
 - Email validation provided. Input has to be an email.
 - use placeholder attribute to display light instructive text in the email text field
 ```html
@@ -235,13 +232,9 @@
     <input type="email" name="email" id="email" placeholder="Enter an email" >
   </div>
 ```
-- Output:
-  <div>
-    <label for="email">Email:</label> <br>
-    <input type="email" name="email" id="email" placeholder="Enter an email" >
-  </div>
-**Message Input**
-- ```<textarea></textarea>``` has it's own tag
+
+#### Message Input
+- We can use the ```<textarea></textarea>``` tag
 - We can specify the width and length of textarea by using cols and rows attribute
 ```html
   <div>
@@ -249,16 +242,12 @@
     <textarea name="message" id="message" cols="50" rows = "5"></textarea>
   </div>
 ```
-- Output:
-  <div>
-    <label for="message">Message:</label> <br>
-    <textarea name="message" id="message" cols="50" rows = "5"></textarea>
-  </div>
-**Select List**
-- When selected the value we define in option is submitted with submitted.
+
+#### Select List
+- When selected, the value we have defined in ```<option></option>``` tag is submitted.
 - We have ```<select></select>``` tag 
-- We put option label between ```<option></option>``` tag and it's value is assigned to the value attribute.
-- Use selected to preselect an option
+- We put option's label between ```<option></option>``` tag and it's value is assigned to the value attribute.
+- Use ```selected``` attribute to preselect an option
 ```html
   <div>
     <label for="sex">Sex</label>
@@ -269,16 +258,8 @@
     </select> 
   </div>
 ```
-Output:
-  <div>
-    <label for="sex">Sex</label>
-    <select name="sex" id="sex">
-      <option value="male">male</option>
-      <option value="female" selected>female </option>
-      <option value="other">other</option>
-    </select> 
-  </div>
-**Number Input**
+
+#### Number Input 
 - Number field bans writing letters and symbols expect the letter e.
 ```html
   <div>
@@ -286,12 +267,8 @@ Output:
     <input type="number" name="age" id="age">
   </div>
 ```
-- Output:
-  <div>
-    <label for="age">Age:</label> <br>
-    <input type="number" name="age" id="age">
-  </div>
-**Date Input**
+
+#### Date Input
 - A Calendar appears where we can select the date and time
 ```html
   <div>
@@ -299,15 +276,11 @@ Output:
     <input type="date" name="birthdate" id="birthdate">
   </div>
 ```
-- Output:
-  <div>
-    <label for="birthdate">Birth Date:</label> <br>
-    <input type="date" name="birthdate" id="birthdate">
-  </div>
 
-**Radio Button**
+
+#### Radio Button
 - We label each radio button by adding the text at the end of the radio input element
-- We can set preselected radio button with checked attribute.
+- We can pre-set a radio button with a ```checked``` attribute.
 - Input type of radio for each options and the name attribute is same for each of them but the value attribute is going to be different
 ```html
   <div>
@@ -317,15 +290,9 @@ Output:
     <input type="radio" name="membership" value="super" id="membership"> Super
   </div>
 ```
-- Output:
-  <div>
-    <label for="membership">Membership</label>
-    <input type="radio" name="membership" value="simple" id="membership">Simple
-    <input type="radio" name="membership" value="standard" id="membership" checked> Standard
-    <input type="radio" name="membership" value="super" id="membership"> Super
-  </div>
 
-**Checkboxes**
+
+#### Checkboxes
 - input type => checkbox
 - Multiple selection is possible, else similar to radio button
 ```html
@@ -336,17 +303,10 @@ Output:
     <input type="checkbox" name="likes" value="boat" id="likes"> Boat
   </div>
 ```
-- Output:
-  <div>
-    <label for="likes">I Like..</label>
-    <input type="checkbox" name="likes" value="bike" id="likes">Bike
-    <input type="checkbox" name="likes" value="car" id="likes" > Car
-    <input type="checkbox" name="likes" value="boat" id="likes"> Boat
-  </div>
 
 - TIPS: highlight a word and press ctrl + d subsequentially to select next occurence of that word, then you can start editing them at once.
 
-**Submit**
+#### Submit
 - Two options:
 ```html
     <!-- Input Type -->
@@ -367,7 +327,7 @@ reference: https://www.w3schools.com/html/html_blocks.asp
 
 ### Inline Elements:
 
-- An inline element does not start on a new line and it only takes up as much width as necessary.
+- An inline element does not start on a new line and it only takes that it requires.
 - EG: ```<a>, <label>, <script>, <select>, <strong>, <textarea>, <button>, <img>```
 - Note: An inline element cannot contain a block-level element!
 
@@ -380,13 +340,6 @@ reference: https://www.w3schools.com/html/html_blocks.asp
  <a style="border:2px red solid" href="#">A link</a>
  <a style="border:2px red solid" href="#">A link</a>
  ```
-
-- Output:
- <p style="border:2px green solid">Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae iusto, laboriosam nobis soluta nulla nostrum? Accusamus voluptatibus praesentium quas! Laborum quia fugit possimus veritatis voluptatum quae quisquam rem laboriosam enim.</p>
- <p style="border:2px green solid">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate repellat quo aliquid modi perferendis. Fuga, odio nihil sint rem qui cumque dolores nemo fugiat, quia dolore sit culpa. Optio, repellendus! </p>
-
- <a style="border:2px red solid" href="#">A link</a>
- <a style="border:2px red solid" href="#">A link</a>
 
 - The border shows how much of the screen width paragrah(green) and anchor(red border) element occupy respectively.
 
@@ -406,7 +359,7 @@ reference: https://www.w3schools.com/html/html_blocks.asp
 
 ### HTML5 Semantic Tags:
 - Purpose: To better layout  our sections
-- header tags (instead of using "main-header" id ```<div id = "main-header" class="card">```we could use them)
+- header tags (instead of using "main-header" id like ```<div id = "main-header" class="card">``` we can use the header tag)
 - nav tag, section tag and so on. 
 - copyright symbol : ```&copy;``` op: &copy;
 
@@ -446,9 +399,7 @@ reference: https://www.w3schools.com/html/html_blocks.asp
   <p>&copy;</p>
   <p>&reg;</p>
 ```
-- Output:
-  <p>&copy;</p>
-  <p>&reg;</p>
+
 
 ### Others:
 
@@ -473,34 +424,15 @@ reference: https://www.w3schools.com/html/html_blocks.asp
   <!-- Ctrl + s is in computer font due to kbd -->
   <p>Save the file by pressing <kbd>Ctrl + s</kbd></p>
 ```
-- Output:
-  <!-- Currency -->
-  <p>&cent;</p>
-  <p>&pound;</p>
-  <p>&yen;</p>
-  <p>&euro;</p>
 
-  <!-- Suits -->
-  <p>&spades;</p>
-  <p>&clubs;</p>
-  <p>&hearts;</p>
-  <p>&diams;</p>
-
-    <!-- Computer Code Snippets -->
-  <code>
-    &lt;?php echo 'Hello' &gt;
-  </code>
-
-  <!-- Ctrl + s is in computer font due to kbd -->
-  <p>Save the file by pressing <kbd>Ctrl + s</kbd></p>
 
 ## HTML5 Semantic Tags and Challenge:
 - ```<header>, <footer>, <nav>, <main> , <section>, <article>, <aside>``` 
 - Not just for organization
-- Helps People with disabilities, hearing, listening to recognize and access and understand component of the page.
+- Helps People with disabilities (by seeing, listening means) to recognize, access and understand component of the page.
 ![Semantic Tags](html5_semantic_tags.png)
 
-- Header(```<header>```) goes to the top, with navigation, log, search bar and so on. 
+- Header(```<header>```) goes to the top, with navigation, logo, search bar and so on. 
 - Footer goes at the bottom
 - Nav tag used for navigation menu
 - Main could be wrapped around main content , usually people use section
@@ -508,3 +440,78 @@ reference: https://www.w3schools.com/html/html_blocks.asp
 - Article (```<article>)``` is used for post
 - aside (```<aside>```) for sidebar content such as ads
 - They have just a div elements with different name.
+- EG:
+
+```html
+ <body>
+    <!-- Header -->
+    <header id="header" class="card">
+      <h1>My Website</h1>
+      <p>Just Another Website</p>
+    </header>
+
+    <!-- Main Content (left) -->
+    <main id="main">
+      <!-- Welcome Section -->
+      <section id="welcome" class="card">
+        <h2>Welcome To Our Website</h2>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat
+          cupiditate itaque possimus numquam corporis odit deserunt voluptas
+          repellat ad ex earum magnam mollitia magni eaque nisi, excepturi nam
+          temporibus! Sed. <br />
+          <a href="#" class="text-center">Click For More</a>
+        </p>
+      </section>
+      <!-- Blog Section -->
+      <section id="blog">
+        <h2>From Our Blog</h2>
+        <!-- Article One -->
+        <article class="article">
+          <h3>Article One</h3>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem
+            veniam adipisci necessitatibus quia quisquam? Eligendi vitae quia
+            totam accusantium officiis!
+          </p>
+        </article>
+        <!-- Article Two -->
+        <article class="article">
+          <h3>Article Two</h3>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem
+            veniam adipisci necessitatibus quia quisquam? Eligendi vitae quia
+            totam accusantium officiis!
+          </p>
+        </article>
+      </section>
+    </main>
+
+    <!-- Sidebar (right) -->
+    <aside id="sidebar" class="card">
+      <h3>Navigation</h3>
+      <!-- Navigation -->
+      <nav>        
+        <ul id="main-nav">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <hr />
+      <h3>Contact Us</h3>
+      <ul>
+        <li><strong>Address:</strong> 50 Main st, Boston MA</li>
+        <li><strong>Phone:</strong> (555) 555-5555</li>
+        <li><strong>Email:</strong> me@somethingcool.come</li>
+      </ul>
+    </aside>
+
+    <div class="clr"></div>
+
+    <!-- Footer -->
+    <footer id="footer">
+      <p class="text-center">Copyright &copy; My Website 2019</p>
+    </footer>
+  </body>
+```
