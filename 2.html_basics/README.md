@@ -495,7 +495,16 @@ reference: https://www.w3schools.com/html/html_blocks.asp
   <p>Save the file by pressing <kbd>Ctrl + s</kbd></p>
 
 ## HTML5 Semantic Tags and Challenge:
-- ```<header>, <footer>, <nav>, <main> , <section>, <article>, <aside>```
+- ```<header>, <footer>, <nav>, <main> , <section>, <article>, <aside>``` 
 - Not just for organization
-- Helps People with disabilities, hearing, listening to recognize and access component of the page.
+- Helps People with disabilities, hearing, listening to recognize and access and understand component of the page.
 ![Semantic Tags](html5_semantic_tags.png)
+
+- Header(```<header>```) goes to the top, with navigation, log, search bar and so on. 
+- Footer goes at the bottom
+- Nav tag used for navigation menu
+- Main could be wrapped around main content , usually people use section
+- Section (```<section>```) can wrap specific section such as about, contact section
+- Article (```<article>)``` is used for post
+- aside (```<aside>```) for sidebar content such as ads
+- They have just a div elements with different name.
