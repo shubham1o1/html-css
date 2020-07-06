@@ -7,7 +7,7 @@
 - Fonts, Colors, etc
 - Background and borders
 - Box Model / Margin and Padding
-- Floating and ALignment
+- Floating and Alignment
 - Display Property
 - Link and Button Styling
 - Creating Menus
@@ -65,7 +65,7 @@ Output:
     }
 ```
 - using h2 before # is optional. Just using # will allow you to style other element with the green-heading id. 
-- id's are unique. If you want multiple tags to have same styling use class.
+- ids are unique. If you want multiple tags to have same styling use class.
 - using class
 ```css
     .green-heading{
@@ -84,7 +84,7 @@ Output:
 ```
 
 ### Naming Conventions:
-- Dont name classes by their properties such as gree-heading. Later if you want to change it, there will be confusion.
+- Dont name classes by their properties such as green-heading. Later if you want to change it, there will be confusion.
 - Name it with something such as primary-heading, secondary-heading and so on. 
 - Name should fit with change.
 
@@ -129,7 +129,7 @@ Output:
 
 - there are Family, Size
 - Fonts Style : Web Safe Fonts, Google Fonts
-- font-Family is usually added in the body, so that it effects your whole page:
+- font-family is usually added in the body, so that it effects your whole page:
 ```html
   <style>
    body{
@@ -138,9 +138,9 @@ Output:
   </style>
 ```
 
-- In fonts are not Web Safe you must include the font file within website. Web Safe fonts are available in all browsers.
+- If fonts are not Web Safe you must include the font file within website. Web Safe fonts are available in all browsers.
 ![font family](fonts_family.png)
-- serif has edges sans serif has no edge
+- serif has pointy edges sans serif has no pointy edge
 - Font stacks imply that when one is not found the other one is used. 
 
 ### Using Google Fonts:
@@ -247,8 +247,8 @@ Output:
       border-style: solid; /*dashed, dotted, ... */
       border : 3px solid red;
 ```
+- While setting them all at once, the order doesnot matter, it could be ```3px, solid, red``` or ```red, 3px, solid```
 - We can also just use background to add color or background image.
-- With border radius we can add curve to the corner of the border. You dont even need the border to add border radius, just adding it will round the corner of the element
 - We can also specify border position such as top, bottom. eg: 
 ```css
   border-radius: 10px;
@@ -256,6 +256,9 @@ Output:
   border-top-left-radius: 10px; /* only curve the top left corner of the border */
   border-top-right-radius: 10px;
 ```
+- With border radius we can add curve to the corner of the border. You dont even need the border to add border radius, just adding it will round the corner of the element
+
+### THE Example CODE:
 
 ```html
 <head>
@@ -299,7 +302,7 @@ Output:
   </style>
 </head>
 ```
-- background-image with url -> ```background-image: url('./img/stars.jpg');```. It takes the size of the element. You only see the portion of the background image that covers the element's size. 
+- **background-image** with url -> ```background-image: url('./img/stars.jpg');```. It takes the size of the element. You only see the portion of the background image that covers the element's size. 
 - However we can also change the size of the element with width and height property. EG: ```height: 200px;``` , ```width: 600px;```
 - Background repeat property lets us decide whether the image repeats until it fits in the element's background. It has choices such as to repeat in x-axis or y-axis and so on. ```background-repeat: no-repeat;```
 - Background position property: to move the image around. EG: 
@@ -311,11 +314,11 @@ Output:
   background-position: 100px 100px;
 ```
 - To show whole image without compromise: ```background-size: cover;```
-- Just using background property we can specify image, position, no-repeat, cover in a single line
+- Just using **background** property we can specify image, position, no-repeat, cover in a single line
 ```css
   background: url('./img/stars.jpg') no-repeat center center/cover;
 ```
-- fixed background: picture remains in one position within the element without being effected by scrolling
+- **fixed background**: picture remains in one position within the element without being effected by scrolling
 
 ## Box Model, Margin and Padding:
 
