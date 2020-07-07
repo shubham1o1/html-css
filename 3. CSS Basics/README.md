@@ -322,3 +322,440 @@ Output:
 
 ## Box Model, Margin and Padding:
 
+- div element's default CSS (observed from the chrome's developers tool)
+```css
+div {
+    display: block;
+}
+```
+- block means that it goes all the way across the window's width.
+### Box model :
+
+  ![box model from dev tool](boxmodel.png)
+
+#### Four layers : 
+1. Element: 
+    - height and width can be adjusted.
+    - Default width - whole page, default height - according to content present
+2. Padding : Spacing between border and element
+3. Border : As we saw before
+4. Margin : Space outside border
+
+#### Default Values:
+```css
+display:block;
+font-size:18.72px;
+font-weight:700;
+/* height:22px; */
+margin-block-end:18.72px;
+margin-block-start:18.72px;
+margin-inline-end:0px;
+margin-inline-start:0px;
+/* width:831px; */
+```
+
+#### Removing Margin
+```css
+.box p {
+  margin:0;
+}
+```
+
+#### Taking away default styling with Reset:
+- Number of ways to do this. 
+- Followig is the easiest way:
+```css
+  /* CSS Reset */
+  *{
+    /* Top bottom left and right
+    ** Margin and Padding is zero  */
+    margin : 0;
+    padding : 0;
+  }
+```
+- *{} selects all the elements
+
+### Some Properties for Margin and Padding:
+#### box-sizing:
+```css
+*{
+  margin : 0;
+  padding : 0;
+  box-sizing: border-box;
+}
+.box{
+  background: #f4f4f4;
+  border: 2px #777 solid;
+  width: 500px;
+
+  /* padding on all sides */
+  padding : 120px;
+}
+```
+- Box is 500px and within the box there is 120px padding. If we didnot set box-sizing to border-box, 120px space would be added the width of the element as 500 + 120 px.  
+
+### Padding and Margin Styles:
+- Bottom property has higher precedence so they can override above properties:
+```css
+  .box{
+    background: #f4f4f4;
+    border: 2px #777 solid;
+    width: 500px;
+
+    /* padding on all sides */
+    padding : 20px;
+
+    /* Padding per side */
+    padding-top: 10px;
+    padding-right: 20px;
+    padding-bottom: 10px;
+    padding-left: 20px;
+
+    /* Shorthand Padding order matters
+    top, right, bottom, left */
+    padding : 10px 20px 10px 20px;
+
+    /* Padding SHorthand = top/bottom left/right */
+    padding: 10px 20px;
+    
+    /* margin on all sides */
+    margin: 20px;
+
+    /* Margin per side */
+    margin-top: 10px;
+    margin-right: 20px;
+    margin-bottom: 10px;
+    margin-left: 20px;
+
+    /* Shorthand Margin order matters
+    top, right, bottom, left */
+    margin : 10px 20px 10px 20px;
+
+    /* Margin SHorthand = top/bottom left/right */
+    margin: 10px 20px;
+
+  }
+```
+- here padding-top, -right, -bottom, and -left will override the padding property because they appear further down. Same for margins
+
+## FLOAT and ALIGNMENT:
+
+### Content:
+- Aligning Text
+- Auto Margin
+
+### Centering:
+- Use the Container Element. 
+- Add width to container and set the margin to auto. 
+- Auto margin apply same margins to both sides, pushing it to the middle.
+```html
+  <style>
+    .container{
+      /* width:960px; */
+
+      /* Makes the content more responsive for smaller windows and devices */
+      max-width:960px;
+
+      /* 30px top-bottom, auto left-right */
+      margin: 30px auto; 
+    }
+    
+  </style>
+  <body>
+
+  <div class="container">
+    <div id="box-1" class="box">
+      <h3>Heading 1</h3>
+  ...
+```
+### Text Align
+```css
+  .box p{
+    /* text align */
+    text-align : justify;
+  }
+```
+### Floats:
+- Not going to used much
+- Just for the substitute of Flex and Grid.
+- Once you know flex and grid abandon float
+- Useful for Creating sidebars and grid views
+```css
+  #box-2{
+    float: left;
+    width: 53%; /* percentage of container's width */
+  }
+  #box-3{
+    float: right;
+    width:45%;
+  }
+  .clr{
+    clear:both; /* to clear left and right floats */
+  }
+```
+- Just forget to clear floats:
+```html
+ <div class="clr"></div>
+```
+- Use clear right after divs of floating class
+
+### Link State and Button Styling:
+- Links have different state: regular, hover, active, visited.
+- You can style these link states using the pseudo selector.
+```css
+  a{
+    color : #333;
+    text-decoration: none;
+  }
+
+  a:hover{
+    color: coral;
+    text-decoration:underline;
+    /* font-size: 40px; */
+  }
+  a:visited{
+    color:red;
+  }
+
+  a:active{
+```
+- Here ```a:<state>``` is a pseudo selector 
+
+#### Button Styling:
+```css
+  .btn{
+    background: #4c6ca0;
+    color: #fff;
+    border: none;
+    font-size: 16px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  .btn:hover{
+    color: #f4f4f4;
+    background: #446190;
+  }
+```
+
+### Navigation Menu Styling:
+- By default unordered list has 40px padding on the left side
+- Side Menu Styling:
+```css
+.side-menu{
+  list-style: none; /* remove bullets */
+  border: 1px #ddd solid;
+  border-radius: 10px;
+  width: 300px;
+  padding: 20px;
+}
+.side-menu li{
+  font-size: 18px;
+  line-height: 2.4em;
+  border-bottom: dotted 1px #ddd;
+}
+.side-menu li:last-child{
+  border:none; /* Pseudo selector to select last list item */
+}
+
+.side-menu li a {
+  color: #333;
+  text-decoration: none; /* to remove underline from link item */
+}
+
+.side-menu li a:hover{
+  color: coral; 
+}
+```
+- Side Menu HTML:
+```html
+ <ul class="side-menu">
+   <li><a href="#">Home</a></li>
+   <li><a href="#">About</a></li>
+   <li><a href="#">Services</a></li>
+   <li><a href="#">Contact</a></li>
+ </ul>
+```
+
+#### Navbars:
+- CSS:
+```css
+  .navbar{
+    list-style: none;
+    margin: 0;
+    padding : 0;
+    background: #4c6ca0;
+    border-radius: 5px;
+    overflow: auto; /* So that float dont knock out bg color */
+  }
+  .navbar li {
+    /* Padding here is not good idea
+    since hovering will cover whole item at once*/
+    float: left;
+  }
+  .navbar li a{
+    display: block; /*display as block allows us to add spaces and padding (up, down,left and right) */
+    color: blanchedalmond;
+    text-decoration: none;
+    padding: 15px 20px;
+  }
+  .navbar li a:hover{
+    background-color: #446190;
+    color: #f4f4f4;
+  }
+```
+- HTML:
+```html
+ <ul class="navbar">
+   <li><a href="#">Home</a></li>
+   <li><a href="#">About</a></li>
+   <li><a href="#">Services</a></li>
+   <li><a href="#">Contact</a></li>
+ </ul
+```
+
+## INLINE, BLOCK and INLINE-BLOCK DISPLAY:
+
+- The DISPLAY property is very important and we use it with flexbox and grid too. 
+### Converting block to inline:
+```html
+  <head>
+    <style>
+      li {
+        display: inline; /* Even the bullet disappears*/
+      }
+      li a {
+        padding-right: 20px; 
+      }
+    </style>
+  </head>
+  <body>
+    <ul>
+      <li><a href="#">Technology</a></li>
+      <li><a href="#">Business</a></li>
+      <li><a href="#">Fashion</a></li>
+    </ul>
+  </body>
+```
+- list is a block level element
+- We changed to inline using the ```display : inline``` property
+
+### Converting inline to block:
+- Centering image is not possible because it is an inline element ```margin:auto``` wont work
+- CSS:
+```css
+   img{
+     display: block;
+     margin:auto;
+   }
+```
+- HTML:
+```html
+<img src="./img/leaf.png" alt="my image">
+```
+
+### Using inline-block:
+- div is a block element.
+- setting ```display: inline``` wont take width and ```margin-bottom``` property
+- So, we use ```display:inline-block ```
+- Inline-block goes horizontal but it also allows us to add widths
+- HTML:
+```html
+  <div class="box">
+    <h3>Heading</h3>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi recusandae repellat quo doloremque, ut amet deserunt minima beatae fugit vitae!</p>
+  </div>
+  <div class="box">
+    <h3>Heading</h3>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi recusandae repellat quo doloremque, ut amet deserunt minima beatae fugit vitae!</p>
+  </div>
+  <div class="box">
+    <h3>Heading</h3>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi recusandae repellat quo doloremque, ut amet deserunt minima beatae fugit vitae!</p>
+  </div>
+```
+- CSS:
+```CSS
+   .box{
+     width: 32.8%;
+     display: inline-block;
+     box-sizing: border-box;
+     background: #f4f4f4;
+     padding: 20px;
+     margin-bottom: 15px;
+   }
+```
+
+## POSITIONING:
+
+- Positioning elements in the page
+- ![position values](positionvalues.png)
+
+- We are going to create 5 boxes and position them
+- HTML CODE:
+```html
+<body>
+ <div id="box-1" class="box"></div>
+ <div class="container">
+  <div id="box-2" class="box"></div>
+  <div id="box-3" class="box"></div>
+ </div>
+ <div id="box-4" class="box"></div>
+ <div id="box-5" class="box"></div>
+</body>
+```
+- Positioning code in CSS:
+```css
+    body{
+      height: 4000px;
+    }
+   .box{
+     width : 100px;
+     height: 100px;
+   }
+
+   .container{
+     position: relative; /* we can use top right bttom and left now */
+     width: 500px;
+     height: 500px;
+     background: #333;
+     /* z-index: 2; */
+   }
+
+   #box-1{
+     position: relative;
+     top: 50px; 
+     left: 50px;
+     z-index: 1;
+     background: red;
+   }
+
+   #box-2{
+     position: absolute; /* with respect to container, i.e its parent */
+     top: 100px; /* move up a 100px */
+     left: 100px; /* move left a 100px */
+     background: yellow;
+   }
+   #box-3{
+    position: absolute;
+    bottom: 100px;
+    right: 100px;
+    background: green;
+   }
+   #box-4{
+     position: fixed; 
+     background: blue;
+   }
+   #box-5{
+     position:sticky;
+     top:0; /* where we want to stick is top 0*/
+     background: orange;
+     z-index: -1;
+   }
+```
+- Everything by default has a position of static
+- with top, bottom, right and left we can move the element if w.r.t its parent if we have positioned them as absolute.
+- z-index : which element (overlapping) will go to front. Higher the z-index, more front it is wrt to other elements. 
+- fixed is used to position an element at the desired position irrespective to the scroll
+
