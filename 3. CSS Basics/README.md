@@ -759,3 +759,21 @@ margin-inline-start:0px;
 - z-index : which element (overlapping) will go to front. Higher the z-index, more front it is wrt to other elements. 
 - fixed is used to position an element at the desired position irrespective to the scroll
 
+## Aside Visibility, Order and Negative Margin
+
+- ```display: none;``` : Useful when building responsive sites where you might want to hide something from mobile devices. It completely removes from the DOM
+- ```visibility: hidden;``` is similar to display:none, but it occupies the space. Makes invisible but still present in DOM.
+
+### Precedence:
+- Further down => Higher precedence
+- Styling with class => Higher precedence than styling elements
+#### Important Flag:
+- If you want your style to override other style you can use the important flag
+- ```color : blue !important;```
+
+### Negative Margin:
+```css
+  margin-top:-30px; /* pushes up */
+  margin-left: -30; /* pushes the element to the left */
+```
+- doesnot work with padding.
