@@ -476,7 +476,7 @@ margin-inline-start:0px;
   }
 ```
 ### Floats:
-- Not going to used much
+- Not going to be used much
 - Just for the substitute of Flex and Grid.
 - Once you know flex and grid abandon float
 - Useful for Creating sidebars and grid views
@@ -493,7 +493,7 @@ margin-inline-start:0px;
     clear:both; /* to clear left and right floats */
   }
 ```
-- Just forget to clear floats:
+- Just dont forget to clear floats:
 ```html
  <div class="clr"></div>
 ```
@@ -518,6 +518,8 @@ margin-inline-start:0px;
   }
 
   a:active{
+    color: green;
+  }
 ```
 - Here ```a:<state>``` is a pseudo selector 
 
@@ -744,8 +746,11 @@ margin-inline-start:0px;
     background: green;
    }
    #box-4{
-     position: fixed; 
-     background: blue;
+      position: fixed; 
+      bottom: 0;
+      right: 0;
+      width: 300px;
+      background: blue;
    }
    #box-5{
      position:sticky;
@@ -758,6 +763,8 @@ margin-inline-start:0px;
 - with top, bottom, right and left we can move the element if w.r.t its parent if we have positioned them as absolute.
 - z-index : which element (overlapping) will go to front. Higher the z-index, more front it is wrt to other elements. 
 - fixed is used to position an element at the desired position irrespective to the scroll
+
+*(note: Fixed is not working)*
 
 ## Aside Visibility, Order and Negative Margin
 
