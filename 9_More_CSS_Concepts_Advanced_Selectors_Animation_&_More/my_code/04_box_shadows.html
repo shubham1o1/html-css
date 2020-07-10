@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+  .container {
+    display: flex;
+  }
+  .box{
+    padding: 1rem;
+    margin: 1rem;
+    background: coral;
+    color: #fff;
+
+    /* offset-x |offset-y| color */
+    box-shadow: 10px 10px teal;
+
+    /* offset-x |offset-y| blur-radius | color */
+    box-shadow: 5px 5px 8px teal;
+
+    /* Negative values */
+    box-shadow: -5px -5px 8px teal;
+
+    /* offset-x |offset-y| blur-radius | spread-radius| color */
+    box-shadow: 3px 3px 10px 1px rgba(0,0,0,0.3);
+
+    /* inset| offset-x |offset-y| color */
+    box-shadow: inset 3px 3px 10px 1px teal;
+
+    /* multiple shadows */
+    box-shadow: 3px 3px 10px teal , -3px -3px 10px olive;
+  }
+</style>
+<body>
+  <div class="container">
+    <div class="box">
+      <h3>heading</h3>
+      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Esse magnam autem, dicta deleniti laudantium exercitationem velit at eos blanditiis! Porro.</p>
+    </div>
+    <div class="box">
+      <h3>heading</h3>
+      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Esse magnam autem, dicta deleniti laudantium exercitationem velit at eos blanditiis! Porro.</p>
+    </div>
+    <div class="box">
+      <h3>heading</h3>
+      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Esse magnam autem, dicta deleniti laudantium exercitationem velit at eos blanditiis! Porro.</p>
+    </div>
+  </div> 
+</body>
+</html>
