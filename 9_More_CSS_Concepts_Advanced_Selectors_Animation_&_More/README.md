@@ -203,3 +203,251 @@ box-shadow: 3px 3px teal , -3px -3px oliv;
 ```
 
 ## CSS Variables (Custom Properties):
+- You should define scope for your variable
+- eg: 
+
+```css
+  body{
+    --light-color:#f4f4f4;
+    background: var(--light-color);
+  }
+```
+- here --light-color is a variable
+- Scope:
+```css
+  :root{
+    /* variable created in root scope can be used anywhere in the stylesheet */
+    --light-color: #f4f4f4;
+  }
+```
+### Sandbox:
+```css
+:root{
+    /* variable created in root scope can be used anywhere in the stylesheet */
+    --light-color: #f4f4f4;
+    --primary-color: #333;
+    --secondary-color: #ccc;
+
+    --max-width: 1100px
+  }
+
+  .box{
+    --box-1-width : 1;
+    --box-2-width: 2;
+  }
+
+  *{
+    margin: 0;
+    padding: 0;
+  }
+  body{
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.4;
+    background: var(--light-color);
+  }
+
+  header{
+    background-color: var(--primary-color);
+    border-bottom: 5px var(--secondary-color) solid;
+    color: #fff;
+    text-align: center;
+  }
+
+  .container{
+    display: flex;
+    margin: auto;
+    max-width: var(--max-width) ;
+  }
+
+  .box{
+    background-color: var(--primary-color);
+    border-bottom: 5px var(--secondary-color) solid;
+    color: #fff;
+    padding: 1rem;
+    margin: 1rem;
+  }
+
+  .box-1{flex: var(--box-1-width);}
+  .box-2{flex: var(--box-2-width);}
+```
+
+## Keyframe Animation:
+
+- You take a property that can be animated such as a width, a position, a color, a opacity and something like that where you have midpoints. 
+- Width - 0 to 600 px, animation, grow, shrink, move, fade in, fade out
+```css
+  body{
+    background: #333;
+  }
+  .box{
+    background: white;
+    width: 200px;
+    height: 200px;
+    position: relative;
+    animation-name: animate1;
+    animation-duration: 5s;
+    animation-iteration-count: 2;
+    /* animation-iteration-count: infinite; */
+
+    /* Stays at the final state */
+    animation-fill-mode: forwards;
+
+    /* delays 2s to start the animation */
+    animation-delay: 2s;
+
+    /* reverse animation */
+    animation-direction: alternate ;
+    /* animation-direction: alternate-reverse ; */
+
+    /* motion eg: start up fast then ease in  */
+    animation-timing-function: ease-in-out;
+  }
+
+  @keyframes animate1 {
+    from{
+      width: 200px;
+      top: 0;
+    }
+    to{
+      width: 600px;
+      background-color: red; /*color morphing occurs */
+      top: 300px;
+    }
+```
+- Easier way:
+```css
+  animation: animate1 5s forwards 1s ease-in-out ;
+```
+
+### Percentages:
+- Instead of moving from one point to another, we can also use percentages
+- Percentages define the percentage of duration of animation
+- Here is the CSS sandbox
+```css
+  body{
+    background: #333;
+  }
+  .box{
+    background: #fff;
+    width: 200px;
+    height: 200px;
+    position: relative;
+    top: 0;
+    left: 0;
+    animation: animate1 5s forwards ease-in-out;
+  }
+
+  @keyframes animate1 {
+    25%{
+      top: 0;
+      left: 300px;
+      background: red;
+      border-radius: 50% 0 0 0;
+    }
+    50%{
+      top: 300px;
+      left: 300px;
+      background: green;
+      border-radius: 50% 50% 0 0;
+    }
+    75%{
+      top: 300px;
+      left: 0;
+      background: blue;
+      border-radius: 50% 50% 50% 0;
+    }
+    100%{
+      top: 0;
+      left: 0;
+      background: white;
+      border-radius: 50% 50% 50% 50%;
+
+    }
+
+  }
+```
+
+## CSS Transitions:
+- Happens on an event (Like hovering over link)
+- ```transition-property: background;``` for specifying which property we want to have transition on a hover or something like that. We could do all or specify a specific property.
+- ```transition-duration: 2s;``` duration for transition
+- Specify the event to change background as:
+```css
+    .box:hover{
+      background: red;
+    }
+```
+- Now you'll notice a transition on background color when you hover
+- ```transition-delay: 3s;``` Adds delay on start of transition
+- ```transition-timing-function: ease-in-out;``` for the manner of transition
+- Single line: ```transition: background 2s ease-in-out;```
+- Multiple Transiton: ```transition: background, border-radius 2s ease-in-out;```
+- Another Multiple Transition: ```transition: all 2s ease-in-out;```
+
+
+### TRANSITIONAL PROPERTIES
+
+#### Properties that have an identifiable halfway point
+
+-  background-color 
+-  background-position 
+-  border-color 
+-  border-width 
+-  border-spacing 
+-  bottom 
+-  color
+-  font-size 
+-  font-weight 
+-  height left 
+-  letter-spacing 
+-  line-height 
+-  margin 
+-  max-height 
+-  max-width 
+-  min-height 
+-  min-width 
+-  opacity 
+-  outline-color 
+-  outline-offset 
+-  outline-width 
+-  padding right 
+-  text-indent 
+-  text-shadow 
+-  top 
+-  vertical-align 
+-  visibility 
+-  width 
+-  word-spacing 
+-  z-index
+
+## Transform Property:
+
+REF: https://developer.mozilla.org/en-US/docs/Web/CSS/transform
+
+- ```transform: rotate(25deg);``` rotates 25 degree
+- ```transform: skew(25deg);``` skews diagonally
+- ```transform: scale(2);``` doubling the size
+
+### Transform with transitions:
+
+```css
+...
+    transition: all 1s ease-in-out;
+  }
+
+  .box:hover{
+    transform: rotate(180deg);
+    transform: skew(25deg); /* Overwrites rotate */
+    transform: scale(2); 
+  }
+```
+
+### Translate to move around
+- translate x and y to move items around xy axis
+```css
+  .box:hover{
+    transform: translateX(100px);
+    transform: translate(100px, 100px); */
+    transform: translate3d(100px, 100px, 100px); /* increases performance */
+  }
+```
