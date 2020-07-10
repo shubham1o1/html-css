@@ -16,4 +16,29 @@
 ## Removing Space?? 
 - Use negative margin/padding
 
-## 
+## Line Height:
+
+- normal : A normal line height. This is default	
+- number : A number that will be multiplied with the current font-size to set the line height	
+- length : A fixed line height in px, pt, cm, etc.	
+- %	: A line height in percent of the current font size	
+- initial :	Sets this property to its default value. 	
+- inherit	: Inherits this property from its parent element. 
+
+```css
+div.a {
+  line-height: normal;
+}
+
+div.b {
+  line-height: 1.6;
+}
+
+div.c {
+  line-height: 80%;
+}
+
+div.d {
+  line-height: 200%;
+}
+```
