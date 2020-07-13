@@ -9,13 +9,14 @@
     }
 ```
 - Selects only ```p``` that is a direct child of the div
-- Here ```p`` inside ```<ul></ul>``` wouldnt be selected since it is not a direct child of div
+- Here ```p``` inside ```<ul></ul>``` wouldn't be selected since it is not a direct child of div
 - But ```<p></p>``` outside ```<ul></ul>``` would be selected.
 ```html
 <div>
   <ul>
     <li><p>asfgsfg</p></li> 
   <ul> 
+  <p>asfadfsd</p>
 <div>
 ```
 
@@ -27,23 +28,23 @@
     color: #fff;
   }
 ```
-- P Element directly after div which get applied the above styles
+- P Element directly after div will get applied with the above styles
 ```html
-  <div>\
+  <div>
     <p>lorem aksdjkfakj ajksdf </p>
   </div>
-    <p> Hey MR. Tambourine</p>
+  <p> Hey MR. Tambourine</p>
 ```
-- Here the Last P will only get selected.
+- Here the Last ```<p></p>``` will only get selected.
 
 ### By Attribute:
 ```css
-    /* By attribute */
-    a[target] {
-      background: red;
-    }
+  /* By attribute */
+  a[target] {
+    background: red;
+  }
 ```
-- Here the a tag with target attributed will get this style applied.
+- Here the ```<a></a>``` tag with target attribute will get this style applied.
 
 ```css
   /* By attribute */
@@ -95,8 +96,8 @@
 
 ## Before and After Pseudo Selector
 - Allows us to insert content before or after an element.
-- **Use Case**: When we have a form and there is fields that are required and marked with asterisk
-- Implementation:
+- **Use Case**: When we have a form and there are fields that are required and marked with asterisk
+- **Implementation**:
 - CSS:
 ```css
   .is-required:after{
@@ -110,7 +111,7 @@
   <label class="is-required" for="name">Name</label>
   <input type="text">
 ```
-- Asterisk is not in the markup but the content in after style is added after the label element. 
+- Asterisk is not in the markup but it is the content of after selector. It is a style that is added after the label element. 
 
 ### Before:
 - Used in image overlay (dimming of image)
@@ -141,11 +142,11 @@
 ## Box Shadows:
 
 ```css
-    /* offset-x |offset-y| color */
-    box-shadow: 10px 10px teal;
+  /* offset-x |offset-y| color */
+  box-shadow: 10px 10px teal;
 
-    /* offset-x |offset-y| blur-radius | color */
-    box-shadow: 5px 5px 8px teal;
+  /* offset-x |offset-y| blur-radius | color */
+  box-shadow: 5px 5px 8px teal;
 ```
 - 10px on the x-axis, 10 px on y-axis, teal is the color of the shadow
 - blur radius blurs the shadow
@@ -380,9 +381,9 @@ box-shadow: 3px 3px teal , -3px -3px oliv;
 - Now you'll notice a transition on background color when you hover
 - ```transition-delay: 3s;``` Adds delay on start of transition
 - ```transition-timing-function: ease-in-out;``` for the manner of transition
-- Single line: ```transition: background 2s ease-in-out;```
-- Multiple Transiton: ```transition: background, border-radius 2s ease-in-out;```
-- Another Multiple Transition: ```transition: all 2s ease-in-out;```
+- **Single line:** ```transition: background 2s ease-in-out;```
+- **Multiple Transiton:** ```transition: background, border-radius 2s ease-in-out;```
+- **Another Multiple Transition Option:** ```transition: all 2s ease-in-out;```
 
 
 ### TRANSITIONAL PROPERTIES

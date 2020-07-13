@@ -17,7 +17,7 @@
 ```
 - ```position:fixed;``` with ```z-index``` puts the element in front of other elements and it is not effected by scolling, it remains in one fixed position
 
-- We can use ~ selector to selector different unrelated elements. 
+- We can use ~ selector to select different unrelated elements. 
 
 ## Knowledge Timeline:
 

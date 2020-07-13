@@ -2,10 +2,10 @@
 
 ## What is CSS Grid ?
 
-- Grid Layour system for CSS
+- Grid Layout system for CSS
 - Similar to flexbox (More complex and powerful)
 - Two-dimensional Layouts
-- Can us "align-items", "justify-content", etc
+- Can use "align-items", "justify-content", etc
 - Partial support for IE11
 
 ### How it works?
@@ -18,13 +18,14 @@
 - ```fr``` unit of measure is going to be introduced, fr -> fractions.
 
 ### Two Dimensional Layouts
-- Flex is not capable of 2-D layouts, it is used for single row or column
+- Flex is not capable of 2-D layouts, it is used for single row or single column
 
 ![2D](notes-images/twod.png)
 
 - Flex - Used for Navbar
 
-### Spanning Rows and Columns with Grid:
+
+## Spanning Rows and Columns with Grid:
 ![spanning](notes-images/spanning.png)
 
 ### Grid VS Flex:
@@ -44,8 +45,8 @@
     grid-template-columns: 200px 200px 200px;
   }
 ```
-- Through grid template columns we specify the number of columns and the width of each column
-- Here, If we have more than 3 grid items, it is going to continue on the next line with similar sequence of spots
+- Through ```grid-template-columns``` we specify the number of columns and the width of each column
+- Here, If we have more than 3 grid items, it is going to continue on the next line with similar sequence of spots for the upcoming items
 
 ### Setting width automatically:
 ```css
@@ -160,7 +161,9 @@ grid-template-columns: repeat(3, 1fr);
 
   }
 ```
+
 - O/P:
+
 ![Spanning](notes-images/spanningfirst.png)
 
 - Shorter Version:
@@ -168,7 +171,7 @@ grid-template-columns: repeat(3, 1fr);
   .item:first-child {
     /* Shorter Version */
     grid-column: 1 / span 3;
-grid-row: 1 / span 2;
+    grid-row: 1 / span 2;
   }
 ```
 ### nth child spanning:
