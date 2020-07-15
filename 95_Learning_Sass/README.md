@@ -60,3 +60,128 @@ Wrote CSS to /home/bomb/Documents/projects/html_css/modern_html_css/95_Learning_
 ## Koala Sass Compiler 
 ---<SKipped>---
 
+## VARIABLES AND PARTIALS
+
+### Variables;
+- Starts with <h1 style="display:inline;">$</h1> sign
+```css
+$color: blue;
+$primary-color: steelblue;
+$secondary-color: skyblue;
+$light-color:#f4f4f4;
+$dark-color: #333;
+$font-stack : Arial, Helvetica, sans-serif;
+
+body {
+  background: $light-color;
+  color: $dark-color;
+  font-family: $font-stack;
+  line-height: 1.5;
+}
+```
+
+## Partials:
+- You break your css a lot more in SASS. 
+- In bootstrap, every elements such as button, links, paragraph have their own partial file. 
+- In CSS you'd have to make an extra HTTP request everytime you try to access other files. 
+- Sass makes it easy to import files. It builds files on top of each other
+
+### Working with partials:
+- Create a file ```_variables.scss``` inside scss folder
+- File name starts with underscore, which imply the partial files and it won't be compiled.
+- Here is the sandbox example: 
+```css
+/* _variables.scss */
+$color: blue;
+$primary-color: steelblue;
+$secondary-color: skyblue;
+$light-color:#f4f4f4;
+$dark-color: #333;
+$font-stack : Arial, Helvetica, sans-serif;
+```
+- We import the partials
+```css
+/* main.scss */
+@import 'variables';
+
+*{
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: $light-color;
+  color: $dark-color;
+  font-family: $font-stack;
+  line-height: 1.5;
+}
+```
+- The output in **main.css**:
+```css
+* {
+  margin: 0;
+  padding: 0; }
+
+body {
+  background: #f4f4f4;
+  color: #333;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.5; }
+```
+- When you create a new file, dont forget to restart sass
+
+## Nesting and Structuring:
+- We can structure sass similar to html:
+- Here's is the html snippet
+```html
+  <header>
+    <h1>Sass Sandbox</h1>
+  </header>
+```
+- To style h1 that is inside header we can do the nesting:
+```scss
+header {
+  background: $dark-color;
+  color: $light-color;
+  padding: 1rem;
+
+  h1 {
+    text-align: center;
+  }
+}
+```
+### Getting a little creative:
+- here &-a implies .section-a & brings the parent's name by looking at the scope it is currently in.
+```scss
+.section {
+  padding: 3rem;
+
+  h3 {
+    font-size: 2rem;
+  }
+
+  &-a {
+    background: $primary-color;
+    color: #fff;
+  }
+  &-b {
+    background: $secondary-color;
+    color: #fff;
+  }
+}
+```
+- html:
+```html
+  <section class="section-a">
+    <h3>Section A</h3>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias illum dolores quaerat voluptates dolor harum fugit nostrum perferendis, quae eligendi error repellat non doloribus obcaecati quam tempore similique, ea cupiditate.</p>
+    <a href="#" class="btn-light">READ MORE</a>
+  </section>
+  <section class="section-b">
+    <h3>Section B</h3>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias illum dolores quaerat voluptates dolor harum fugit nostrum perferendis, quae eligendi error repellat non doloribus obcaecati quam tempore similique, ea cupiditate.</p>
+    <a href="#" class="btn-dark">READ MORE</a>
+  </section>
+```
+
+## Inheritance and Contrast (Video no : 6)
