@@ -1,0 +1,18 @@
+// Set text Color
+@function set-text-color($bgcolor) {
+  @if(lightness($bgcolor) > 50) {
+    @return #000;
+  } @else {
+    @return #fff;
+  }
+}
+
+// Tansform Mixin:
+@mixin transform ($property) {
+  // These are the prefixes ////
+  --webkt-transform: $property;
+  -ms-transform: $property;
+  /////////////////////////////
+
+  transform: $property;
+}

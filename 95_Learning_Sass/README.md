@@ -58,12 +58,12 @@ Wrote CSS to /home/bomb/Documents/projects/html_css/modern_html_css/95_Learning_
 ---
 
 ## Koala Sass Compiler 
----<SKipped>---
+---SKipped---
 
 ## VARIABLES AND PARTIALS
 
 ### Variables;
-- Starts with <h1 style="display:inline;">$</h1> sign
+- Starts with **$** sign
 ```css
 $color: blue;
 $primary-color: steelblue;
@@ -184,4 +184,110 @@ header {
   </section>
 ```
 
-## Inheritance and Contrast (Video no : 6)
+## Inheritance and Contrast:
+- Set of style that can be extended by declaring with %
+- Sandbox:
+```css
+%btn-shared {
+  display: inline-block;
+  padding: 0.7rem 2 rem;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  margin-top: 1rem;
+}
+
+.btn {
+  &-light {
+    @extend %btn-shared;
+    background-color: $light-color;
+    color: #333;
+  }
+  &-dark {
+    @extend %btn-shared;
+    background-color: $dark-color;
+    color: #fff;
+  }
+}
+```
+
+## Functions, Mixins & More:
+- Function Returns Something
+- Mixin is just a set of styles you want to include
+- Defining Functions:
+```css
+// Set text Color
+@function set-text-color($bgcolor) {
+  @if(lightness($bgcolor) > 50) {
+    @return #000;
+  } @else {
+    @return #fff;
+  }
+}
+```
+- Note the extensive use of @ , it is ```@function, @if, @else, @return, @import``` 
+- Importing and using the partials with functions:
+```css
+@import '_functions';
+
+header {
+  background: $dark-color;
+  color: set-text-color($dark-color);
+  padding: 1rem;
+}
+```
+
+### Using mixins:
+- define:
+```scss
+//"_functions.scss"
+
+// Tansform Mixin:
+@mixin transform ($property) {
+  // These are the prefixes ////
+  --webkt-transform: $property;
+  -ms-transform: $property;
+  /////////////////////////////
+
+  transform: $property;
+}
+```
+- Import and use
+```scss
+// main.scss
+
+@import '_functions';
+
+...
+
+.btn {
+  &-light {
+    @extend %btn-shared;
+    background-color: $light-color;
+    color:set-text-color($light-color);
+
+    &:hover{
+      @include transform(rotate(20deg));
+    }
+  }
+
+  &-dark {
+    @extend %btn-shared;
+    background-color: $dark-color;
+    color: set-text-color($dark-color);
+
+    &:hover{
+      @include transform(rotate(-20deg));
+    }
+  }
+}
+```
+
+### Inbuilt Functions:
+- Darken the color with ```darken()```:
+
+```background-color : darken($light-color, 10%);```
+
+- lighten the dark with ```lighten()```:
+
+```background-color : lighten($dark-color, 10%);```
