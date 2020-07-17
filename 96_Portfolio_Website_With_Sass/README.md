@@ -98,3 +98,19 @@ button[class^="btn."]:hover {
   }
 }
 ```
+
+## Responsice Media Queries:
+
+- Stacking repeat(4,1fr) with 1fr for smartphones
+
+```scss
+// Stack Grid Columns
+#home-a .specials,
+#home-b .stats,
+#home-c .process,
+#about-d .testimonials,
+#contact-b .contact-info,
+.items {
+  grid-template-columns: 1fr;
+}
+```
