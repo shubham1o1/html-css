@@ -7,7 +7,7 @@
 - CSS flexbox
 - CSS grid
 - Animation (Transitions, Keyframes, etc)
-- variables, Transform, Pseudo Selectors, etc
+- Variables, Transform, Pseudo Selectors, etc
 - Sticky Menus, Overlays, Form Styling, Landing Pages, etc
 - Sass CSS Pre-compiler
 - Deployment - Shared Host & Netlify
