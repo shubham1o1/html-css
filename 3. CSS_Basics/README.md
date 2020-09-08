@@ -192,7 +192,7 @@ h2#green-heading {
 
 ![Absolute Units](absolutecssunits.png)
 
-- We mainly use px - pizels
+- We mainly use `px - pixels`
 - pt- points, ms word uses pt
 
 #### Relative Units:
@@ -248,7 +248,7 @@ h2#green-heading {
 - A-F, 0-9.
 - 6 or 3 characters.
 - Starts with #.
-- first two red, second two green, last two green. In `#ffAABB` ff is for red value, AA is for green value and BB is for blue value.
+- first two red, second two green, last two blue. In `#ffAABB` ff is for red value, AA is for green value and BB is for blue value.
 - **#ff0000** is red,**#00ff00** is green and so on.
 - Having same value leads to shades of grey eg (f4f4f4, ccc, e3e3e3, 333).
 
@@ -312,7 +312,7 @@ border-top-right-radius: 10px;
 
 - With border radius we can add curve to the corner of the border. You dont even need the border to add border radius, just adding it will round the corner of the element
 
-### THE Example CODE:
+### The Example CODE:
 
 ```html
 <head>
@@ -428,7 +428,7 @@ margin-inline-start: 0px;
 #### Taking away default styling with Reset:
 
 - Number of ways to do this.
-- Followig is the easiest way:
+- Following is the easiest way:
 
 ```css
 /* CSS Reset */
