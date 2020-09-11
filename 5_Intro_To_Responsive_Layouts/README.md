@@ -129,7 +129,7 @@ html{
 - Vh is used more than Vw since most of the time things go all the way in width
 
 ### Content Height:
-- THe body element doesn't take all of the viewport. It just takes as much height as the content present. 
+- The body element doesn't take all of the viewport. It just takes as much height as the content present. 
 - CSS
 ```css
   <style>
@@ -158,7 +158,7 @@ html{
   </header>
 </body>
 ```
-- Here setting header height to 100% doesnot fill whole browser with the header's background
+- Here setting header height to 100% does not fill whole browser with the header's background
 - It is because the body doesn't cover whole of the browser. And the body only occupies the part of the browser windows that has the content. 
 - So, we need viewport height for this reason
 - we can set height from 100% to 100vh the the browser window is now cover with header's background color. 
