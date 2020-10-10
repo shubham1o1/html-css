@@ -22,6 +22,7 @@
 ### .scss vs .sass
 - .scss is usually preferred over .sass as it uses the same syntax as regular css
 - .sass uses ident for scope definition
+
 ![scssvssass](notes-images/scssvssass.png)
 
 ## Environment Setup With Node-Sass:
@@ -151,7 +152,7 @@ header {
 }
 ```
 ### Getting a little creative:
-- here &-a implies .section-a & brings the parent's name by looking at the scope it is currently in.
+- here **&-a** implies **.section-a** & brings the parent's name by looking at the scope it is currently in.
 ```scss
 .section {
   padding: 3rem;
@@ -170,7 +171,7 @@ header {
   }
 }
 ```
-- html:
+- **html:**
 ```html
   <section class="section-a">
     <h3>Section A</h3>
@@ -225,7 +226,7 @@ header {
   }
 }
 ```
-- Note the extensive use of @ , it is ```@function, @if, @else, @return, @import``` 
+- **Note the extensive use of @ , it is ```@function, @if, @else, @return, @import```** 
 - Importing and using the partials with functions:
 ```css
 @import '_functions';
