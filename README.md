@@ -53,3 +53,6 @@
 
 - Build static websites: Portfolios, small business sites, informational and brochure websites, etc
 - Build the visual part of anything: Stores, social networks, etc
+
+## New Topics:
+- Container queries [Youtube Link](https://www.youtube.com/watch?v=jUQ2-C5ZNRc)
